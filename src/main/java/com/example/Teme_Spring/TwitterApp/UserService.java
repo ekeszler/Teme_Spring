@@ -26,16 +26,16 @@ public class UserService {
         return user;
     }
 
-    @Transactional
-    public User addTweetToUser(Long userID, Tweet tweet){
-        User user = userRepository.findById(userID).orElseThrow(() -> new Exception("user not found"));
-        tweet.setUser(user);
-        user.getTweets().add(tweet);
-        return userRepository.save(user);
-    }
+//    @Transactional
+//    public User addTweetToUser(Long userID, Tweet tweet){
+//        User user = userRepository.findById(userID).orElseThrow(() -> new Exception("user not found"));
+//        tweet.setUser(user);
+//        user.getTweets().add(tweet);
+//        return userRepository.save(user);
+//    }
 
-    @Transactional
-    public User deleteAllTweetsFromUser(Long userId) throws Exception{
-        tweetRepository.deleteAllByUser_Id(userId);
-    }
+//    @Transactional
+//    public User deleteAllTweetsFromUser(Long userId) throws Exception{
+//        tweetRepository.deleteAllByUser_Id(userId);
+//    }
 }
