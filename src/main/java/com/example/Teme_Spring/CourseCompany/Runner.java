@@ -29,6 +29,7 @@ public class Runner implements CommandLineRunner {
     public void run(String... args) throws Exception {
     User user = new User("stud","abc","Andrei","Ionescu","andreiio@gmail.com",Role.STUDENT);
     Team team = new Team("Echipa1");
-    Team firstteam = teamService.addStudentToTeam(1L,user);
+    teamService.addStudentToTeam(1L,user);
+    userService.removeStudentFromTeam(1L);
     }
 }
