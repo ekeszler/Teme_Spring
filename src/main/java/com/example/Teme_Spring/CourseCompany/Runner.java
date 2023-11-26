@@ -30,6 +30,6 @@ public class Runner implements CommandLineRunner {
     User user = new User("stud","abc","Andrei","Ionescu","andreiio@gmail.com",Role.STUDENT);
     Team team = new Team("Echipa1");
     teamService.addStudentToTeam(1L,user);
-    userService.removeStudentFromTeam(1L);
+    //userService.removeStudentFromTeam(1L);
     }
 }

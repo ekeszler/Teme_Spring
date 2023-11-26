@@ -2,6 +2,7 @@ package com.example.Teme_Spring.CourseCompany;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class Session {
     @Column
     private String startTime;
     private String endTime;
-    private Date date;
+    private LocalDate date;
 
     @OneToMany(mappedBy = "session", cascade = CascadeType.ALL, orphanRemoval = true)
     List<Attendance> attendances;
@@ -24,14 +25,27 @@ public class Session {
     @JoinColumn(name = "module_id")
     private Module module;
 
-    public Session(Long id, String startTime, String endTime, Date date) {
+    @ManyToOne
+    @JoinColumn(name = "location_id")
+    private Location location;
+
+    public Session(Long id, String startTime, String endTime, LocalDate date, Location location) {
         this.id = id;
         this.startTime = startTime;
         this.endTime = endTime;
         this.date = date;
+        this.location = location;
     }
 
     public Session() {
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     public Long getId() {
@@ -58,11 +72,11 @@ public class Session {
         this.endTime = endTime;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
@@ -91,6 +105,7 @@ public class Session {
                 ", date=" + date +
                 ", attendances=" + attendances +
                 ", module=" + module +
+                ", location=" + location +
                 '}';
     }
 }
