@@ -8,5 +8,8 @@ import java.util.List;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    public List<User> removeUserById(Long id);
+    List<User> removeUserById(Long id);
+
+    List<User> save(Long id);
+
 }

@@ -16,8 +16,10 @@ public class TeamService {
         this.teamRepository = teamRepository;
         this.userRepository = userRepository;
     }
+
+
     @Transactional
-    public Team addStudentToTeam (Long teamId, User user){
+    public Team addStudentToTeam (Long teamId, User user) throws Exception{
         Team team = teamRepository.findById(teamId).orElseThrow(() -> new EntityNotFoundException("id not found"));
         team.getParticipants().add(user);
         return teamRepository.save(team);
