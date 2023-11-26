@@ -9,6 +9,7 @@ public class Subject {
     @GeneratedValue
     private Long id;
 
+    @Column
     private String name;
 
     @ManyToOne()

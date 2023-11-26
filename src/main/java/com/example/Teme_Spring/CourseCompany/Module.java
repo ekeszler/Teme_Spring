@@ -11,6 +11,7 @@ public class Module {
     @Id
     @GeneratedValue
     private Long id;
+    @Column
     private String name;
     private Date startDate;
     private Date endDate;

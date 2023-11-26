@@ -9,6 +9,7 @@ public class Attendance {
     @GeneratedValue
     private Long id;
 
+    @Column
     private boolean attending;
 
     @ManyToOne()

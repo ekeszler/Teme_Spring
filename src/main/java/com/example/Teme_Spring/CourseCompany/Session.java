@@ -12,6 +12,7 @@ public class Session {
     @GeneratedValue
     private Long id;
 
+    @Column
     private String startTime;
     private String endTime;
     private Date date;

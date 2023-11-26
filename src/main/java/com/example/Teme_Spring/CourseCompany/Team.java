@@ -10,7 +10,7 @@ public class Team {
     @Id
     @GeneratedValue
     public Long id;
-
+    @Column
     private String name;
 
     @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, orphanRemoval = true)

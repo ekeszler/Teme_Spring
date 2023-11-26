@@ -10,7 +10,7 @@ public class Location {
     @Id
     @GeneratedValue
     private Long id;
-
+    @Column
     private String name;
     private String street;
     private int number;
