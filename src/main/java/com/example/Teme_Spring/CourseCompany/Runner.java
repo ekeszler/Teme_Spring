@@ -19,10 +19,11 @@ public class Runner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-    Team team = new Team("Echipa1");
-    teamRepository.save(team);
-    User user = new User("stud","abc","Andrei","Ionescu","andreiio@gmail.com",Role.STUDENT);
-    teamService.addStudentToTeam(1L,user);
+    Team team1 = new Team("Echipa1");
+    teamRepository.save(team1);
+    User user1 = new User("stud","abc","Andrei","Ionescu","andreiio@gmail.com",Role.STUDENT);
+    teamService.addStudentToTeam(1L,user1);
+    teamRepository.save(team1);
     //userService.removeStudentFromTeam(1L);
     }
 }
