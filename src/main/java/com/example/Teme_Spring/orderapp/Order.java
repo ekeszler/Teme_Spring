@@ -1,4 +1,4 @@
-package com.springapps.jpaexamples.orderapp;
+package com.example.Teme_Spring.orderapp;
 
 import jakarta.persistence.*;
 

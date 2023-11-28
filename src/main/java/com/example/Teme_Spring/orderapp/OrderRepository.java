@@ -1,4 +1,4 @@
-package com.springapps.jpaexamples.orderapp;
+package com.example.Teme_Spring.orderapp;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
